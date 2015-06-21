@@ -1,0 +1,42 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title">Página para el usuario </ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.busqueda.rol == 'PACIENTE'}">
+                <h1>Datos Paciente buscado:</h1>
+
+                <h:dataTable border="1" value="#{controlAutorizacion.busqueda}" var="item">
+                    <h:column>
+                        <h:outputLabel value="#{item.nombre}"></h:outputLabel>
+                    </h:column>
+                    <h:column>
+                        <form action="WEB-INF/../añadirHistorial.xhtml">
+                            <input type="submit" value="Añadir Historial"/>
+                        </form>
+                    </h:column>
+                    <h:column>
+                        <form action="WEB-INF/../ingresarPaciente.xhtml">
+                            <input type="submit" value="Ingresar paciente"/>
+                        </form>
+                    </h:column>
+                    <!--para que sea mas facil para el profesional, dar de alta le llevara a buscar paciente, 
+                    diciendole si se ha podido dar de baja(si estaba ocupando alguna cama) o diciendole que no ocupara ninguna cama-->
+                    <h:column>
+                        <form action="buscar.xhtml">
+                            <input type="submit" value="Dar de alta"/>
+                        </form>
+                    </h:column>
+                </h:dataTable>
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>

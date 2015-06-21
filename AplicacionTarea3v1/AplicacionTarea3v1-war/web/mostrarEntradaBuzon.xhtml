@@ -1,0 +1,38 @@
+<ui:composition template="WEB-INF/templates/plantilla.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title">Buzon</ui:define>
+    <ui:define name="content">
+        
+        <h1>Quejas y Sujerencias</h1>
+        
+        <div class="centrarPanel">
+            <h:dataTable id="ultimoBuzon" value="#{buzonController.listaBuzones()}" var="bz">
+               <h:column>     
+                    <f:facet name="header"> 
+                        <h:outputLabel value="Tipo de Mensaje"></h:outputLabel>
+                    </f:facet>
+                    <h:outputLabel value="#{bz.getTipo_mensaje()}"></h:outputLabel>
+               </h:column>
+               <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Fecha"></h:outputLabel>
+                    </f:facet>
+                    <h:outputLabel value="#{bz.getFecha()}"></h:outputLabel>
+               </h:column>
+               <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Texto" class="texto"></h:outputLabel>
+                    </f:facet>
+                    <h:outputLabel value="#{bz.texto_mensaje}"></h:outputLabel>
+                </h:column>
+            </h:dataTable>
+       </div>
+    </ui:define>
+</ui:composition>
+
+
+

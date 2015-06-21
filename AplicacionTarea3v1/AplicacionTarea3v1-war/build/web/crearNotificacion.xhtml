@@ -1,0 +1,37 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title">Crear Notificacion</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{!controlAutorizacion.esPaciente()}">
+                <div class="centrarPanel">
+                    <h:form id="notificacion">
+                        <h:panelGrid id="panelNotificacion" columns="1">
+                          
+                            <h:outputLabel value="Numero de la Seguridad Social del paciente"/> 
+                            <h:inputText value="#{notificacionController.numeroSS}" required="true" requiredMessage="Debe introducir el número de la SS"/>
+                            
+                            <h:outputLabel value="Tipo de notificacion"></h:outputLabel> 
+                            <h:inputTextarea  cols="50" rows="2" value="#{notificacionController.tipoNotificacion}" required="true" requiredMessage="Debe introducir el tipo de notificación que desea enviar"/>          
+                           
+                            <h:outputLabel value="Descripción" class="texto"/>
+                            <h:inputTextarea  cols="50" rows="7" value="#{notificacionController.descripcion}" required="true" requiredMessage="Es obligatorio introducir un texto descriptivo" />
+                            
+                            <h:commandButton action="#{notificacionController.doCrearNotificacion()}" value="Enviar" />
+                            <h:messages  errorStyle="color: red" infoStyle="color: green" layout="table" ></h:messages>
+                        
+                        </h:panelGrid>
+                    </h:form>
+                </div> 
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>

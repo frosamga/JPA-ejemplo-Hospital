@@ -1,0 +1,47 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title">Vista de notificaciones</ui:define>
+    <ui:define name="content">
+
+                <h1>Notificaciones</h1>
+
+                <div class="centrarPanel">
+                    <h:dataTable value="#{bdEmulation.listaNotificaciones()}" var="item">
+                                              
+                        <h:column>
+                            <f:facet name="header"> 
+                                <h:outputLabel value="Tipo de Notificacion"></h:outputLabel>
+                            </f:facet>
+                            <h:outputLabel value="#{item.tipo}"></h:outputLabel>
+                        </h:column>
+                         
+                        <h:column>
+                            <f:facet name="header"> 
+                                <h:outputLabel value="Fecha"></h:outputLabel>
+                            </f:facet>
+                            <h:outputLabel value="#{item.fecha}"></h:outputLabel>
+                        </h:column>
+                        
+                        <h:column>
+                            <f:facet name="header"> 
+                                <h:outputLabel value="Descripcion"></h:outputLabel>
+                            </f:facet>
+                            <h:outputLabel value="#{item.descripcion}"></h:outputLabel>
+                        </h:column>
+
+                        <h:column>
+                            <f:facet name="header"> 
+                                <h:outputLabel value="Centro"></h:outputLabel>
+                            </f:facet>
+                            <h:outputLabel value="#{item.centroMedico}"></h:outputLabel>
+                        </h:column>
+                        
+                    </h:dataTable>
+                </div>
+       </ui:define>
+</ui:composition>

@@ -1,0 +1,33 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <ui:define name="title">Datos Profesionales</ui:define>
+    
+    <ui:define name="content">
+        <h1>Datos Profesionales</h1>
+        <c:choose>
+            <c:when test="#{!empty controlAutorizacion.usuario.profesional}">
+                <h:panelGrid columns="2">
+                        <h:outputLabel value="Identificador profesional"/>
+                        <h:outputLabel value="#{controlAutorizacion.profesional.id}"/>
+                        <h:outputLabel value="Departamento"/>
+                        <h:outputLabel value="#{controlAutorizacion.profesional.departamento}"/>
+                        <h:outputLabel value="Telefono profesional"/>
+                        <h:inputText value="#{controlAutorizacion.profesional.telefono}"/>
+                        <h:outputLabel value="eMail"/>
+                        <h:inputText value="#{controlAutorizacion.profesional.email}"/>
+                        <h:outputLabel value="Fecha comienzo"/>
+                        <h:outputLabel value="#{controlAutorizacion.profesional.fechaComienzo}"/>
+                        <h:outputLabel value="Fecha fin"/>
+                        <h:inputText value="#{controlAutorizacion.profesional.fechaFin}"/>
+                </h:panelGrid>
+            </c:when>
+            <c:otherwise>
+                No se encuentran datos.
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>

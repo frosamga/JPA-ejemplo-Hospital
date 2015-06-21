@@ -1,0 +1,1048 @@
+pa/* ======================================================================================================
+ GENERAL TYPOGRAPHY 
+=======================================================================================================*/
+
+/* ================= 1. CSS Reset ================= */
+h:commandLink{
+    font-size:15pt;
+}
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin:0;
+
+    padding:0;
+    border:0;
+    outline:0;
+    font-family: Helvetica, Arial, Tahoma, sans-serif;
+}
+strong, b {
+    font-weight:bold;
+}
+em, dfn, i {
+    font-style:italic;
+}
+html,body{
+    height:100%;
+}
+#wrap { 
+    min-height: 100%; 
+} 
+#main { 
+    overflow: auto; 
+    padding-bottom: 50px; 
+    text-align: center; 
+}
+
+#footer{
+    position: relative;
+    margin-top: -50px;
+    height: 50px;
+    clear: both; 
+    text-align: center;  
+}
+/* ================= General tags ================= */
+body {
+    font: 12px/1.7 Helvetica, Arial, Tahoma, sans-serif;
+    color:#666666;
+    background:#FFFFFF;
+    -webkit-font-smoothing: antialiased;
+    backgorund:#f6f4e7;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Helvetica, Arial, Tahoma, sans-serif;
+    margin-bottom:12px;
+    font-weight:600;
+}
+a:link, a:visited, a:hover, a:active, a:focus {
+    text-decoration:none;
+    outline: none;
+    font-family: Helvetica, Arial, Tahoma, sans-serif;
+}
+a {
+    color:#d93e39;
+    font-family: Helvetica, Arial, Tahoma, sans-serif;
+}
+a:hover {
+    text-decoration:underline;
+}
+pre {
+    white-space:pre;
+    overflow:auto;
+    padding:20px;
+}
+code {
+    white-space:pre;
+    overflow:auto;
+    padding:14px;
+    color:#595959;
+    background:#f6f6f6;
+    display:block;
+    border:1px solid #ddd;
+    font-size:11px;
+    line-height:15px;
+}
+code strong {
+    color:#000;
+}
+p {
+    color:#74665b;
+    font-size:12px;
+    font-family: Helvetica, Arial, Tahoma, sans-serif;
+    line-height:22px;
+}
+dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset, blockquote, article, p {
+    margin-bottom: 20px;
+    margin-left: 35%;
+}
+::selection {
+    background:#2e2823;
+    color:#FFFFFF;
+}
+::-moz-selection {
+    background:#2e2823;
+    color:#FFFFFF;
+}
+/* ================= Headers ================= */
+h1 {
+    font-size:25px;
+    color:#453C34;
+}
+h2 {
+    font-size:22px;
+    color:#453C34;
+}
+h3 {
+    font-size:18px;
+    color:#453C34;
+}
+h4 {
+    font-size:16px;
+    color:#453C34;
+}
+h5 {
+    font-size:14px;
+    color:#453C34;
+}
+h6 {
+    font-size:12px;
+    color:#453C34;
+}
+h1.regular, h2.regular, h3.regular, h4.regular, h5.regular, h6.regular {
+    font-weight:400;
+}
+h1.white, h2.white, h3.white, h4.white, h5.white, h6.white {
+    color:#fff;
+}
+h1.page_title {
+    margin-bottom:10px;
+}
+h1.bottom_line {
+    border-bottom:1px solid #d9d9d9;
+    margin:20px 0 30px 0;
+    padding:0 0 10px 0;
+}
+h2.bottom_line {
+    border-bottom:1px solid #d9d9d9;
+    margin-bottom:10px;
+}
+h3.bottom_line {
+    border-bottom:1px solid #d9d9d9;
+    margin-bottom:20px;
+    padding-bottom:15px;
+}
+h3.bottom_line2 {
+    border-bottom:1px solid #d9d9d9;
+    margin-bottom:0;
+    padding-bottom:5px;
+}
+h4.bottom_line {
+    border-bottom:1px solid #d9d9d9;
+    margin-bottom:11px;
+    padding-bottom:10px;
+}
+p.bottom_line {
+    border-bottom:1px solid #d9d9d9;
+    margin-bottom:10px;
+    padding:0 0 13px 0;
+}
+div.bottom_line {
+    border-bottom:1px solid #d9d9d9;
+    margin-bottom:10px;
+    padding:0 0 13px 0;
+}
+p.align_center {
+    text-align:center;
+    font-size:14px;
+    color:#999999;
+}
+p.align_center a {
+    font-weight:bold;
+}
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
+    font-weight:600;
+}
+/* ================= List Styles ================= */
+ul {
+    list-style:none;
+    margin-top:0;
+}
+ol {
+    margin-bottom:0;
+    margin-top:0;
+}
+ol, ol li {
+    list-style:decimal outside;
+}
+/* ================= Images ================= */
+img.alignleft {
+    float:left;
+    margin:10px 16px 10px 0;
+}
+img.aligncenter {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+img.alignright {
+    float:right;
+    margin:5px 0px 5px 11px;
+}
+/* ================= Tables ================= */
+
+//Importante para los panelGrid (TERE)
+table {
+    
+    border-collapse:separate;
+    border-spacing:0;
+    padding:0;
+    text-align: left;
+}
+table thead td {
+    background:#dddddd;
+    height:30px;
+    color:#262626;
+    font-size:12px;
+    font-weight:normal;
+    text-align:left; 
+}
+table td {
+    margin-left:50%;
+    vertical-align:middle;
+    padding:0;
+    width:25%; 
+    height:29px;
+    color:#4d4d4d;
+    font-size:11px;
+    font-weight:normal;
+    text-align:left;
+}
+
+table tr.grey {
+    background:#f2f2f2;
+}
+/* ================= Forms ================= */
+input, textarea {
+    border:1px solid #cccccc;
+    padding:7px 10px 7px 10px;
+    font-size:11px;
+    color:#000000;
+    -webkit-border-radius:3px;
+    -moz-border-radius:3px;
+    border-radius:3px;
+}
+
+/* ======================================================================================================
+ GENERAL STRUCTURE
+=======================================================================================================*/
+
+/* ================= Header and Logo ================= */
+.container {
+    width:1000px;
+
+    margin:0 auto;
+}
+.header_bg {
+    min-height:70px;
+    background:#1FB417;
+
+
+}
+
+.header_bg .logo {
+    float:left;
+    margin-bottom:10px;
+    margin-top: 40px;
+
+}
+/* ================= Header Menu ================= */
+
+.main-menu{
+    margin:10px 0 0 0;
+    float:right;
+}
+.main-menu ul {
+    margin:0;
+}
+.main-menu li ul {
+    padding-top:2px;
+    left:-2px;
+    color:#107941;//cambiar color letra menu
+   
+    font-size: 12pt;
+}
+.main-menu li ul li {
+    box-shadow:2px 2px 2px 0px rgba(0,0,0,0.1);
+
+}
+.main-menu li {
+    white-space:nowrap;
+    display:block;
+    position:relative;
+    margin:0;
+    padding:0;
+    z-index:100;
+    font-weight: bold;
+}
+.main-menu a {
+    display:block;
+    position:relative;
+    font-size:15px;
+    font-family:"Helvetica neue", Arial, sans-serif;
+    color:#107941;//cambiar color letra menu
+    background:#FFFFFF;
+    font-weight:bold;
+}
+.main-menu a:hover {
+    text-decoration:none;
+    color:#d8c0a8;
+
+}
+.main-menu li.submenu > a {
+    padding-right:20px;
+    background:url(../images/menu_down_arrow.png) no-repeat right;
+    cursor:default;
+}
+.main-menu > ul > li {
+    float:left;
+    margin-right:28px;
+}
+.main-menu > ul > li:last-child {
+    margin-right:0;
+}
+.main-menu li ul {
+    display:none;
+    position:absolute;
+    top:100%;
+    z-index:100;
+}
+.main-menu li:hover > ul {
+    display:block;
+}
+.main-menu li ul li.submenu > a {
+    padding-right:10px;
+    background:#403830 url(../images/submenu_left_arrow.png) no-repeat right;
+}
+.main-menu li ul li.submenu > a:hover {
+    padding-right:10px;
+    background:#f5f5f5 url(../images/submenu_left_arrow.png) no-repeat right;
+}
+.main-menu li ul li {
+    border-bottom:1px solid #534a42;
+    background:#FFF;
+}
+.main-menu li ul li a:hover {
+    background:#FFFFFF;
+    color:#107941;
+
+}
+.main-menu li ul li:last-child {
+    border-bottom:1px solid #2e2823;
+}
+.main-menu li ul li a {
+    padding:0 25px 0 12px;
+    line-height:33px;
+    background:#403830;
+}
+.main-menu li ul li ul {
+    top:-1px !important;
+    left:100% !important;
+    padding:0 !important;
+}
+/* ================= Footer ================= */
+.footer_bg {
+    border-top:10px solid #d93e39;
+    background:#282828;
+    margin-top:-150px;
+}
+.footer_bg.no_margin {
+    margin-top:0;
+}
+.footer {
+    margin-top:-35px;
+}
+.footer_bg .footer h1.about {
+    background:url("../images/footer_about.png") no-repeat 0px 4px;
+    color:#aaaaaa;
+    font-size:18px;
+    text-shadow:0 1px 0 #262626;
+    font-weight:400;
+    text-indent:30px;
+}
+.footer_bg .footer h1.blog {
+    background:url("../images/footer_blog.png") no-repeat 0px 4px;
+    color:#aaaaaa;
+    font-size:18px;
+    text-shadow:0 1px 0 #262626;
+    font-weight:400;
+    text-indent:30px;
+}
+.footer_bg .footer h1.flickr {
+    background:url("../images/footer_flickr.png") no-repeat 0px 4px;
+    color:#aaaaaa;
+    font-size:18px;
+    text-shadow:0 1px 0 #262626;
+    font-weight:400;
+    text-indent:30px;
+}
+.footer_bg .footer p {
+    color:#cccccc;
+    line-height:22px;
+}
+.footer_bg_bottom {
+    border-top:1px solid #453c34;
+    background:#1FB417;
+}
+.footer .lastest_posts img {
+    float:left;
+    margin:5px 20px 0 0;
+}
+.footer .lastest_posts a {
+}
+.footer .col_1_3 {
+    width:280px;
+    margin:20px 40px 0 0;
+}
+.footer .col_1_3.last {
+    width:280px;
+    margin:20px 0 0 0;
+}
+.footer .flickr ul {
+    margin-right:-20px;
+}
+.footer .flickr ul li {
+    padding:0;
+    margin:0 20px 20px 0;
+    float:left;
+}
+.ie7 .footer .flickr ul li {
+    padding:0;
+    margin:0 13px 19px 0;
+    float:left;
+}
+.footer .flickr ul li a {
+    border:4px solid #202020;
+    display:block;
+    width:72px;
+    height:72px;
+}
+.footer_bottom .menu ul {
+    list-style: none;
+    padding:0px 0 0 0;
+}
+.footer_bottom .menu ul li {
+    float:none;
+    position:relative;
+    display:block;
+    margin:0 0 0 0;
+    padding:0;
+    list-style:none;
+    z-index: 9999;
+}
+.footer_bottom .menu ul li a {
+    color:#fff;
+    font-weight:bold;
+    display:block;
+    text-decoration:none;
+    float:none;
+}
+.footer_bottom .menu ul li a.selected {
+    color:#d8c0a8;
+}
+.footer_bottom .menu ul li a:hover {
+    color:#d8c0a8;
+}
+.footer_bottom p, .footer_bottom p a {
+    color:#74665B;
+    line-height:22px;
+    font-size:11px;
+}
+.footer_bottom .keep_in {
+    padding:0px 0 0 0;
+    font-size:14px;
+    color:#a6a6a6;
+    font-weight:600;
+}
+
+/* ================= Columns ================= */
+.content {
+    width:620px;
+    margin:25px 40px 0 0;
+    float:left;
+}
+.sidebar {
+    width:280px;
+    margin:10px 0 0 0;
+    float:left;
+}
+.col_1_2 {
+    width:460px;
+    float:left;
+    margin:0 20px 0 0;
+}
+.col_2_3 {
+    width:1000px;
+    float:none;
+    margin:0 20px 0 0;
+}
+.col_1_3 {
+    width:300px;
+    float:left;
+    margin:0 20px 0 0;
+}
+.col_1_4 {
+    width:220px;
+    float:left;
+    margin:0 20px 0 0;
+}
+.col_1_5 {
+    width:172px;
+    float:left;
+    margin:0 20px 0 0;
+}
+.col_3_4 {
+    width:700px;
+    float:left;
+    margin:0 20px 0 0;
+}
+.content .col_1_2 {
+    width:300px;
+}
+.content .col_1_3 {
+    width:193px;
+}
+.content .col_2_3 {
+    width:406px;
+}
+.content .col_1_4 {
+    width:140px;
+}
+.content .col_1_5 {
+    width:108px;
+}
+.content .col_3_4 {
+    width:460px;
+}
+.col_1_2.last, .col_2_3.last, .col_1_3.last, .col_1_4.last, .col_1_5.last, .col_3_4.last, .col_3_4 .col_1_2.last {
+    margin:0;
+}
+.content .col_1_2.last, .content .col_2_3.last, .content .col_1_3.last, .content .col_1_4.last, .content .col_1_5.last, .content .col_3_4.last {
+    margin:0;
+}
+
+/* ================= Contact Page ================= */
+.contact_map {
+    background:url("../images/contact_map.png") no-repeat;
+    width:261px;
+    height:310px;
+    padding:35px 0 0 21px;
+    margin:30px 0 30px 0;
+}
+.map_canvas {
+    width:240px;
+    height:280px;
+}
+.required_info {
+    font-size:11px;
+    margin:0 0 10px 0;
+}
+.required_info span {
+    color:red;
+}
+.inputText {
+    width:300px;
+    height:24px;
+    border:1px solid #cccccc;
+    padding:7px;
+}
+.inputTextarea {
+    width:525px;
+    height:250px;
+    border:1px solid #cccccc;
+    padding:7px;
+}
+.contact_form .inputText.error_class {
+    border:1px solid #ef716d;
+}
+.contact_form .inputTextarea.error_class {
+    border:1px solid #ef716d;
+}
+.contact_form label {
+    text-align:left;
+    margin-right: 0.5em;
+    color:#262626;
+    font-size:13px;
+}
+.contact_form label span {
+    color:red;
+}
+
+
+
+/* === Clearfix === */
+.clear {
+    clear:both;
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+    width:0
+}
+.clearfix:after {
+    clear:both;
+    content:' ';
+    display:block;
+    font-size:0;
+    height:0;
+    line-height:0;
+    visibility:hidden;
+    width:0
+}
+
+/* ======================================================================================================
+ WIDGETS
+=======================================================================================================*/
+
+/* ================= Paggination ================= */
+.content .pages {
+}
+.pages a {
+    font-size:14px;
+    line-height:14px;
+    color:#707070;
+    display:block;
+    text-align:center;
+    padding:8px 15px;
+    margin:10px 10px 0 0;
+    float:left;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+}
+.pages a:hover {
+    color:#de5853;
+    text-decoration:none;
+}
+.pages a.selected {
+    background:#d93e39;
+    color:#FFFFFF;
+    border:0;
+}
+.pages a.prev {
+    background:url("../images/pages_prev.png") no-repeat center center;
+}
+.pages a.prev:hover {
+    background:url("../images/pages_prev_hover.png") no-repeat center center;
+}
+.pages a.next {
+    background:url("../images/pages_next.png") no-repeat center center;
+}
+.pages a.next:hover {
+    background:url("../images/pages_next_hover.png") no-repeat center center;
+}
+
+
+/* ======================================================================================================
+ MEDIA QUERIES
+=======================================================================================================*/	
+
+/* ================= Tablet (Portrait) 768px - 959px ================= */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    /* ================= Logo and Main menu ================= */
+    .logo {
+        display: block;
+        float: none;
+        width:100%;
+    }
+    .main-menu {
+        margin:0 0 30px 0;
+        float:left;
+    }
+
+
+    /* ================= Container and Columns ================= */
+    .container {
+        width: 748px;
+    }
+    .col_1_2 {
+        width: 364px;
+    }
+    .col_1_3 {
+        width: 236px;
+    }
+    .col_2_3 {
+        width: 492px;
+    }
+    .col_1_4 {
+        width: 172px;
+    }
+    .col_1_5 {
+        width: 133px;
+    }
+    .col_3_4 {
+        width: 556px;
+    }
+    .content .col_1_2 {
+        width:239px;
+        margin:0 10px 0 0;
+    }
+    .content .col_1_3 {
+        width:156px;
+        margin:0 10px 0 0;
+    }
+    .content .col_2_3 {
+        width:322px;
+        margin:0 10px 0 0;
+    }
+    .content .col_1_4 {
+        width:114px;
+        margin:0 10px 0 0;
+    }
+    .content .col_1_5 {
+        width:89px;
+        margin:0 10px 0 0;
+    }
+    .content .col_3_4 {
+        width:362px;
+        margin:0 10px 0 0;
+    }
+
+    /* ================= Contact Page ================= */
+    .contact_map {
+        background:none;
+        width:226px;
+        height:310px;
+        padding:0 0 0 0;
+        margin:40px 0 20px 0;
+    }
+    .map_canvas {
+        width:220px;
+        height:280px;
+    }
+    .inputText {
+        width:300px;
+        height:24px;
+    }
+    .inputTextarea {
+        width:300px;
+        height:150px;
+    }
+ 
+
+    img.liquid {
+        width:100%;
+    }
+
+    /* ================= Footer ================= */
+    .footer .col_1_3 {
+        width:226px;
+        margin:40px 10px 0 10px;
+    }
+    .footer .col_1_3.last {
+        width:226px;
+        margin:40px 10px 0 10px;
+    }
+    .footer .flickr ul {
+        margin-right:-5px;
+    }
+    .footer .flickr ul li {
+        padding:0;
+        margin:0 5px 5px 0;
+        float:left;
+    }
+    .footer .flickr ul li a {
+        border:4px solid #202020;
+        display:block;
+        width:64px;
+        height:64px;
+    }
+    .footer .flickr ul li a img {
+        width:64px;
+        height:64px;
+    }
+}
+
+
+/* ================= Mobile (Portrait) < 767px ================= */
+@media only screen and (max-width: 767px) {
+    /* ================= Logo and Main menu ================= */
+    .logo {
+        display:block;
+        float:none;
+        text-align:center;
+        width:100%;
+    }
+    .header_bg {
+        height: auto;
+    }
+    .main-menu {
+        margin:0 0 30px 0;
+        float:left;
+        width:100%;
+    }
+    .main-menu ul {
+        position:static !important;
+        padding:0 !important;
+    }
+    .main-menu li {
+        box-shadow:none !important;
+        border:0 !important;
+        border-top:1px solid #d9d9d9 !important;
+        display:block !important;
+        float:none !important;
+        margin:0 !important;
+    }
+    .main-menu li.submenu > a {
+        cursor:pointer;
+    }
+    .main-menu li a {
+        padding:0 16px;
+        line-height:33px;
+    }
+    .main-menu li ul li a {
+        padding-left:32px !important;
+    }
+    .main-menu li ul li ul li a {
+        padding-left:48px !important;
+    }
+    .main-menu li.submenu > a {
+        padding-right:20px;
+        background:url(../images/arrow_320.png) no-repeat right;
+    }
+    .main-menu li ul li.submenu > a {
+        padding-right:10px;
+        background:url(../images/arrow_320.png) no-repeat right;
+    }
+    .main-menu li ul li.submenu > a:hover {
+        padding-right:10px;
+        background:#f5f5f5 url(../images/arrow_320.png) no-repeat right;
+    }
+    .main-menu li.submenu > a {
+        padding-right:20px;
+        background:url(../images/arrow_320.png) no-repeat right;
+    }
+    .main-menu li ul {
+        display:none !important;
+    }
+    .main-menu li:hover > ul {
+        display:block !important;
+    }
+
+    /* ================= Container and Columns ================= */
+    .col_1_2, .col_1_3, .col_1_4, .col_1_5, .col_3_4, .col_2_3 {
+        float: none;
+        margin-right: 0;
+    }
+    .container, .col_1_2, .col_1_3, .col_1_4, .col_1_5, .col_3_4, .col_2_3 {
+        width:300px;
+    }
+    .content .col_1_2, .content .col_1_3, .content .col_1_4, .content .col_1_5, .content .col_3_4, .content .col_2_3 {
+        width:300px;
+    }
+    /* ================= Contact Page ================= */
+    .inputText {
+        width:285px;
+    }
+    .inputTextarea {
+        width:285px;
+        height:150px;
+    }
+    .submit {
+        margin:0;
+    }
+
+    /* ================= HomePage ================= */
+
+    .footer .col_1_3 {
+        width:280px;
+        float: none;
+        margin:40px auto 0 auto;
+    }
+    .footer .col_1_3.last {
+        width:280px;
+        float: none;
+        margin:40px auto 0 auto;
+    }
+    .footer_bottom .col_2_3 {
+        width:280px;
+        float: none;
+        margin:40px auto 0 auto;
+    }
+    .footer_bottom .col_1_3 {
+        width:280px;
+        float: none;
+        margin:40px auto 0 auto;
+    }
+}
+
+
+
+/* ================= Mobile (Landscape) 480px - 767px ================= */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    /* ================= Logo and Main menu ================= */
+    .logo {
+        display: block;
+        float: none;
+        width:100%;
+    }
+    .main-menu {
+        margin:0 0 30px 0;
+        float:left;
+    }
+
+    /* ================= Container and Columns ================= */
+
+    .col_1_2, .col_1_3, .col_1_4, .col_1_5, .col_3_4, .col_2_3 {
+        float: none;
+        margin-right: 0;
+    }
+    .container, .col_1_2, .col_1_3, .col_1_4, .col_1_5, .col_3_4, .col_2_3 {
+        width:420px;
+    }
+    .content .col_1_2, .content .col_1_3, .content .col_1_4, .content .col_1_5, .content .col_3_4, .content .col_2_3 {
+        width:420px;
+    }
+
+    /* ================= Contact page ================= */
+    .inputText {
+        width:250px;
+    }
+    .inputTextarea {
+        width:250px;
+        height:150px;
+    }
+
+    /* ================= Footer ================= */
+    .footer .col_1_3 {
+        width:420px;
+        margin:40px 0 0 0;
+        float: none;
+        margin:40px auto 0 auto;
+    }
+    .footer .col_1_3.last {
+        width:420px;
+        float: none;
+        margin:40px auto 0 auto;
+    }
+    .footer_bottom .col_2_3 {
+        width:420px;
+        float: none;
+        margin:40px auto 0 auto;
+    }
+    .footer_bottom .col_1_3 {
+        width:420px;
+        float: none;
+        margin:40px auto 0 auto;
+    }
+}
+
+
+/* ================= Mobile (Portrait) < 320px ================= */
+@media only screen and (max-width: 317px) {
+    /* ================= Container and Columns ================= */
+    .col_1_2, .col_1_3, .col_1_4, .col_1_5, .col_3_4, .col_2_3 {
+        float:none;
+        margin:0;
+    }
+    .container, .col_1_2, .col_1_3, .col_1_4, .col_1_5, .col_3_4, .col_2_3 {
+        width:226px;
+    }
+    .content .col_1_2, .content .col_1_3, .content .col_1_4, .content .col_1_5, .content .col_3_4, .content .col_2_3 {
+        width:226px;
+    }
+
+
+    /* =================  Contact page ================= */
+
+    .inputText {
+        width:210px;
+    }
+    .inputTextarea {
+        width:210px;
+        height:70px;
+    }
+    .submit {
+        margin:0;
+    }
+
+    /* =================  Logo ================= */
+    .logo img {
+        width:100%
+    }
+    /* =================  HomePage ================= */
+
+    .footer .col_1_3 {
+        width:226px;
+        margin:40px auto 0 auto;
+    }
+    .footer_bottom .col_1_3 {
+        width:226px;
+        margin:40px auto 0 auto;
+    }
+    .footer_bottom .col_2_3 {
+        width:226px;
+        margin:40px auto 0 auto;
+    }
+    img.liquid {
+        width:100%;
+    }
+    .features .title h3 {
+        font-size:17px;
+    }
+    .features .title h4 {
+        font-size:16px;
+    }
+    /* =================  Footer ================= */
+    .footer .col_1_3.last {
+        width:226px;
+        margin:40px auto 0 auto;
+    }
+    .footer_bottom .col_1_3.last {
+        width:226px;
+        margin:40px auto 0 auto;
+    }
+    .footer_bottom .col_2_3.last {
+        width:226px;
+        margin:40px auto 0 auto;
+    }
+    .footer .flickr ul {
+        margin-right:-5px;
+    }
+    .footer .flickr ul li {
+        padding:0;
+        margin:0 5px 5px 0;
+        float:left;
+    }
+    .footer .flickr ul li a {
+        border:4px solid #202020;
+        display:block;
+        width:64px;
+        height:64px;
+    }
+    .footer .flickr ul li a img {
+        width:64px;
+        height:64px;
+    }
+}
+
+

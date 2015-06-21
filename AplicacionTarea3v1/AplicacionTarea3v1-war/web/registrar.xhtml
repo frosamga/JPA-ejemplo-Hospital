@@ -1,0 +1,88 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title">Registro Usuario</ui:define>
+    <ui:define name="content">
+           
+                <h:form id="login">
+
+                    <h:panelGrid columns="3">
+                        <h:outputLabel value="Nombre de usuario"/>
+                        <h:inputText id="nombreUser" value="#{registrar.usuario.nombre}" required="true"/>
+                        <h:message for="nombreUser"/>
+                        
+                        <h:outputLabel value="Contraseña"/>
+                        <h:inputSecret id="password" value="#{registrar.usuario.password}" required="true"/>
+                        <h:message for="password"/>
+                        
+                        <h:outputLabel value="Repetir contraseña"/>
+                        <h:inputSecret id="repassword" value="#{registrar.repass}" required="true"/>
+                        <h:message for="repassword"/>
+                        
+                        <h:outputLabel value="E-mail"/>
+                        <h:inputText id="email" value="#{registrar.usuario.email}">
+                            <f:validateRegex pattern=".+@+.+."/>
+                        </h:inputText>
+                        <br/>
+                        
+                        <h:outputLabel id="rol" value="Rol"/>
+                        <h:selectOneMenu value="#{registrar.usuario.rol}" required="true" >
+                            <f:selectItem itemValue="SANITARIO" itemLabel="Sanitario"></f:selectItem>
+                            <f:selectItem itemValue="PACIENTE" itemLabel="Paciente"></f:selectItem>
+                            <f:selectItem itemValue="ADMINISTRATIVO" itemLabel="Administrativo"></f:selectItem>
+                       </h:selectOneMenu>
+                        <h:message for="rol"/>
+                        
+                        <h:outputLabel value="DNI"/>
+                        <h:inputText id="dni" value="#{registrar.datosPersonales.dni}" required="true"/>
+                        <h:message for="dni"/>
+                        
+                        <h:outputLabel value="Nombre"/>
+                        <h:inputText id="nombre" value="#{registrar.datosPersonales.nombre}" required="true"/>
+                        <h:message for="nombre"/>
+                        
+                        <h:outputLabel id="apellido1" value="Primer Apellido"/>
+                        <h:inputText value="#{registrar.datosPersonales.apellido1}" required="true"/>
+                        <h:message for="apellido1"/>
+                        
+                        <h:outputLabel id="apellido2" value="Segundo Apellido" />
+                        <h:inputText value="#{registrar.datosPersonales.apellido2}" required="true"/>
+                        <h:message for="apellido2"/>
+
+                        
+                        <h:outputLabel id="fechaNacimiento" value="Fecha de nacimiento" />
+                        <h:inputText value="#{registrar.fechaNacimiento}" required="true"/>
+                        <h:message for="fechaNacimiento"/>
+                        
+                        <h:outputLabel id="nacionalidad" value="Nacionalidad"/>
+                        <h:inputText value="#{registrar.datosPersonales.nacionalidad}" required="true"/>
+                        <h:message for="nacionalidad"/>
+                        
+                        <h:outputLabel value="Calle" />
+                        <h:inputText id="calle" value="#{registrar.datosPersonales.direccion.calle}" required="true" />
+                        <h:message for="calle"/>
+                           
+                        <h:outputLabel value="Ciudad"/> 
+                        <h:inputText id="ciudad" value="#{registrar.datosPersonales.direccion.ciudad}" required="true"/>
+                        <h:message for="ciudad"/>
+                            
+                        <h:outputLabel value="Provincia" />
+                        <h:inputText id="provincia" value="#{registrar.datosPersonales.direccion.provincia}"/>
+                        <br/>
+                          
+                        <h:outputLabel value="Código Postal" />
+                        <h:inputText id="codigoPostal" value="#{registrar.datosPersonales.direccion.codigoPostal}"/>
+                        <br/>
+                            
+                        <h:outputLabel value="Teléfono" />
+                        <h:inputText id="telefono" value="#{registrar.datosPersonales.telefono}"/>
+                        <br/>
+                        
+                    </h:panelGrid>
+                    <h:commandButton value="Registrar" action="#{registrar.registro()}"/>
+                </h:form>
+    </ui:define>
+</ui:composition>

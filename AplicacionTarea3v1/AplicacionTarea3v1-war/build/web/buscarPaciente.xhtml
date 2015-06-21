@@ -1,0 +1,27 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:define name="title">Busqueda usuarios pacientes</ui:define>
+    <ui:define name="content">
+                <h1>Busqueda usuarios pacientes</h1>
+                
+                <h:form id="buscarPaciente">
+                    <h:panelGrid columns="2">
+                        <h:outputLabel value="Numero Seguridad Social"/>
+                        <h:inputText value="#{buscarPaciente.numSS}" />  
+                        <h:outputLabel value="DNI"/>
+                        <h:inputText value="#{buscarPaciente.dni}" />
+                        <h:outputLabel value="Nombre"/>
+                        <h:inputText value="#{buscarPaciente.nombre}" />               
+                        <h:outputLabel value="Primer Apellido"/>
+                        <h:inputText value="#{buscarPaciente.apellido1}" />
+                        <h:outputLabel value="Segundo Apellido"/>
+                        <h:inputText value="#{buscarPaciente.apellido2}" />
+                    </h:panelGrid>
+                    <h:commandButton action="#{buscarPaciente.buscar()}" value="Buscar" />
+                </h:form>
+        <h:messages/>
+    </ui:define>
+</ui:composition>
+

@@ -1,0 +1,69 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+    <ui:define name="title">Datos personales</ui:define>
+    
+    <ui:define name="content">
+        <h1>Datos personales</h1>
+        <c:choose>
+            <c:when test="#{!empty controlAutorizacion.datosPersonales}">
+                 <h:form>
+                <h:panelGrid columns="3">
+                   
+                        <h:outputLabel value="DNI"/>
+                        <h:outputLabel value="#{controlAutorizacion.datosPersonales.dni}"/>
+                        <br/>
+                         
+                        <h:outputLabel value="Nombre"/>
+                        <h:outputLabel value="#{controlAutorizacion.datosPersonales.nombre}"/>
+                        <br/>
+                         
+                        <h:outputLabel value="Primer apellido"/>
+                        <h:outputLabel value="#{controlAutorizacion.datosPersonales.apellido1}"/>
+                        <br/>
+                          
+                        <h:outputLabel value="Segundo apellido"/>
+                        <h:outputLabel value="#{controlAutorizacion.datosPersonales.apellido2}"/>
+                        <br/>
+                           
+                        <h:outputLabel value="Nacionalidad"/>
+                        <h:outputLabel value="#{controlAutorizacion.datosPersonales.nacionalidad}"/>
+                        <br/>
+                         
+                        <h:outputLabel value="Telefono"/>
+                        <h:inputText value="#{controlAutorizacion.datosPersonales.telefono}"/>
+                        <br/>
+                        
+                        <h:outputLabel value="e-Mail"/>
+                        <h:inputText id="E-mail" value="#{controlAutorizacion.usuario.email}"/>
+                        <h:message for="E-mail"/>
+                         
+                        <h:outputLabel value="Calle" />
+                        <h:inputText id="Calle" value="#{controlAutorizacion.datosPersonales.direccion.calle}" required="true" />
+                        <h:message for="Calle"/>
+                        
+                        <h:outputLabel value="Ciudad"/>
+                        <h:inputText id="ciudad" value="#{controlAutorizacion.datosPersonales.direccion.ciudad}" required="true"/>
+                        <h:message for="Ciudad"/>
+                        
+                        <h:outputLabel value="Provincia"/>
+                        <h:inputText id="Provincia" value="#{controlAutorizacion.datosPersonales.direccion.provincia}" required="true"/>
+                        <h:message for="Provincia"/>
+                            
+                        <h:outputLabel value="Codigo Postal"/>
+                        <h:inputText id="CodigoPostal" value="#{controlAutorizacion.datosPersonales.direccion.codigoPostal}" required="true"/>
+                        <h:message for="CogidoPostal"/>
+                    
+                    <h:commandButton value="Guardar campos" action="#{controlAutorizacion.modificarDatosPersonales()}"/>
+               </h:panelGrid>
+               </h:form>
+            </c:when>
+            <c:otherwise>
+                No se encuentran datos.
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>

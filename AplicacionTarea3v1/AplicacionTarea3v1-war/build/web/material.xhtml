@@ -1,0 +1,44 @@
+<ui:composition template="WEB-INF/templates/plantilla.xhtml" 
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title">Materiales</ui:define>
+    <ui:define name="content">
+        <div class="centrarPanel">
+            <h1>Stock en centros</h1>
+
+            <h:dataTable border="1" id="ultimoMaterial" value="#{materialController.listaMateriales()}" var="item">
+                <h:column>
+                    <f:facet name="header">Material</f:facet>
+                    <h:outputLabel value="#{item.nombre}"></h:outputLabel>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Cantidad</f:facet>
+                    <h:outputLabel value="#{item.stock}"></h:outputLabel>
+                </h:column>
+            </h:dataTable>
+            
+            <h1>Solicitudes de material</h1>
+            <h:dataTable border="1" value="#{solicitarController.listaMaterialesSolicitar()}" var="soli">
+                <h:column>
+                    <f:facet name="header">Material</f:facet>
+                    <h:outputLabel value="#{soli.material}"></h:outputLabel>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Cantidad</f:facet>
+                    <h:outputLabel value="#{soli.cantidad}"></h:outputLabel>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Fecha de solicitud</f:facet>
+                    <h:outputLabel value="#{soli.fecha}"></h:outputLabel>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Profesional solicitante</f:facet>
+                    <h:outputLabel value="#{soli.profesional}"></h:outputLabel>
+                </h:column>
+            </h:dataTable>
+        </div>
+    </ui:define>
+</ui:composition>

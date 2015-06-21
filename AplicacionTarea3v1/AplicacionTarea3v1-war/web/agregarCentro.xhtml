@@ -1,0 +1,63 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="title">Agregar Centro</ui:define>
+    <ui:define name="content">
+        <c:choose>
+            <c:when test="#{controlAutorizacion.esAdministrativo()}">
+                <h1>Agregar Centro</h1>
+                <div class="centrarPanel">
+                    <h:form id="agregarCentro">
+                        <h:panelGrid id="panelAgregarCentro" columns="3">
+                            <h:outputLabel value="Código del centro"/> 
+                            <h:inputText id="codigo" value="#{centroController.centro.codigo}" required="true" />
+                            <h:message for="codigo"/>
+                            
+                            <h:outputLabel value="Nombre del centro"/> 
+                            <h:inputText id="nombreCentro" value="#{centroController.centro.nombre}" required="true"/>
+                            <h:message for="nombreCentro"/>
+                            
+                            <h:outputLabel value="Tipo de centro"/> 
+                            <h:selectOneMenu id="tipoCentro" value="#{centroController.centro.tipo}" required="true">
+                                <f:selectItem itemLabel="Seleccionar centro"/>
+                                <f:selectItem itemValue="HOSPITAL" itemLabel="Hospital"/>
+                                <f:selectItem itemValue="CENTRO_DE_SALUD" itemLabel="Centro de salud"/>
+                                <f:selectItem itemValue="AMBULATORIO" itemLabel="Ambulatorio"/>
+                            </h:selectOneMenu>
+                            <h:message for="tipoCentro"/>
+                            
+                            <h:outputLabel value="Calle" />
+                            <h:inputText id="calle" value="#{centroController.centro.direccion.calle}" required="true" />
+                            <h:message for="calle"/>
+                            
+                            <h:outputLabel value="Ciudad"/> 
+                            <h:inputText id="ciudad" value="#{centroController.centro.direccion.ciudad}" required="true" />
+                            <h:message for="ciudad"/>
+                            
+                            <h:outputLabel value="Provincia" />
+                            <h:inputText id="provincia" value="#{centroController.centro.direccion.provincia}"/>
+                            <h:message for="provincia"/>
+                            
+                            <h:outputLabel value="Código Postal" />
+                            <h:inputText id="codigoPostal" value="#{centroController.centro.direccion.codigoPostal}"/>
+                            <h:message for="codigoPostal"/>
+                            
+                            <h:outputLabel value="Teléfono" />
+                            <h:inputText id="telefono" value="#{centroController.centro.telefono}" required="true"/>
+                            <h:message for="telefono"/>
+                            
+                       </h:panelGrid>
+                       <h:commandButton action="#{centroController.agregarCentro()}" value="Agregar" />
+                    </h:form>
+                </div> 
+            </c:when>
+            <c:otherwise>
+                <ui:include src="/WEB-INF/templates/errorAutorizacion.xhtml"/>
+            </c:otherwise>
+        </c:choose>
+    </ui:define>
+</ui:composition>

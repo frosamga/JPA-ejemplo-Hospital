@@ -1,0 +1,60 @@
+<ui:composition template="/WEB-INF/templates/plantilla.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <ui:define name="title">Datos Paciente</ui:define>
+    
+    <ui:define name="content">
+        <h1>Datos Paciente</h1>
+        <h:panelGrid columns="2">
+                <h:panelGroup>
+                    <h:outputLabel value="Numero Seguridad Social: "/>
+                    <h:outputLabel value="#{buscarPacienteController.paciente.numero_ss}"/>
+                </h:panelGroup>
+                 <h:panelGroup>
+                    <h:outputLabel value="Nombre: "/>
+                    <h:outputLabel value="#{buscarPacienteController.datosPersonales.nombre}"/>
+                </h:panelGroup>    
+                <h:panelGroup>
+                   <h:outputLabel value="Apellidos: "/>
+                   <h:outputLabel value="#{buscarPacienteController.datosPersonales.apellido1} #{datosPaciente.paciente.datosPersonales.apellido2}"/>
+                </h:panelGroup>
+                 <h:panelGroup>
+                    <h:outputLabel value="DNI: "/>
+                    <h:outputLabel value="#{buscarPacienteController.datosPersonales.dni}"/>
+                    </h:panelGroup>
+               <h:panelGroup>
+                     <h:outputLabel value="Direccion:"/>
+                     <h:outputLabel value="#{buscarPacienteController.datosPersonales.direccion.calle} #{buscarPacienteController.datosPersonales.direccion.ciudad} #{buscarPacienteController.datosPersonales.direccion.codigoPostal} "/>
+              </h:panelGroup>
+               <h:panelGroup>
+                  <h:outputLabel value="Telefono: "/>
+                  <h:outputLabel value="#{buscarPacienteController.datosPersonales.telefono}"/>
+              </h:panelGroup>
+                <h:panelGroup>
+                  <h:outputLabel value="eMail: "/>
+                  <h:outputLabel value="#{buscarPacienteController.datosPersonales.email}"/>
+           </h:panelGroup>
+       </h:panelGrid>
+       <h1>Historia Clinica></h1>
+       <h:dataTable value="#{buscarPacienteController.paciente.historialMedico}" var="hc">
+          <h:column>
+               <f:facet name="header">Fecha</f:facet>
+               #{hc.fecha}
+          </h:column>
+          <h:column>
+             <f:facet name="header">Entrada</f:facet>
+             #{hc.texto}
+         </h:column>   
+         <h:column>
+             <f:facet name="header">Atendido por</f:facet>
+             #{hc.profesional.datosPersonales.nombre}
+        </h:column>  
+        </h:dataTable>
+        <h:commandButton action="#{ingresarDardealtaEJB.ingresar(buscarPacienteController.paciente)}" value="Ingresar"/>
+
+    </ui:define>
+</ui:composition>
